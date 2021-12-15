@@ -45,6 +45,8 @@
 
   --shiki-highlight-dark: inherit;
   --shiki-highlight-light: none;
+
+  --code-highlight-color: rgba(66, 135, 255, 0.3);
 }
 
 [data-theme='light'] {
@@ -197,6 +199,16 @@ code {
 
 .flex {
   display: flex;
+}
+
+.hl-line {
+  background-color: var(--code-highlight-color);
+  display: block;
+  padding: 0 1.1764705882em;
+  margin-top: 0px;
+  margin-right: -1.17647em;
+  margin-bottom: -1.56rem;
+  margin-left: -1.17647em;
 }
 
 kbd {

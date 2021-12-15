@@ -16,6 +16,7 @@
     "@reach/dialog": "^0.10.5",
     "classnames": "^2.2.6",
     "cmdk": "^0.0.4",
+    "html-react-parser": "^1.4.3",
     "intersection-observer": "^0.7.0",
     "lodash.debounce": "^4.0.8",
     "match-sorter": "^4.0.2",
