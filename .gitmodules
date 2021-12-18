@@ -1,0 +1,3 @@
+[submodule "src_examples/prisma-flask-url-shortener"]
+	path = src_examples/prisma-flask-url-shortener
+	url = https://github.com/RobertCraigie/prisma-flask-url-shortener
