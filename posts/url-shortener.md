@@ -100,13 +100,13 @@ Now we can get onto defining the only model we need for our URL Shortener, copy 
 {!./src_examples/prisma-flask-url-shortener/schema.prisma! lines=13-18}
 ```
 
-The ID field will be automatically filled in by Prisma and we'll then pass this value to [hashids](https://hashids.org/) which will return a string like "3kTMd".
+The ID field will be automatically filled in by Prisma and we'll then pass this value to [hashids](https://hashids.org/) which will then give us a string like "3kTMd".
 
 ```prisma highlight=2
 {!./src_examples/prisma-flask-url-shortener/schema.prisma! lines=13-18}
 ```
 
-TODO
+We're going to use this field on a stats page showing when the redirect URL was created
 
 ```prisma highlight=3
 {!./src_examples/prisma-flask-url-shortener/schema.prisma! lines=13-18}
@@ -151,7 +151,7 @@ SQLite database database.db created at file:database.db
 
 ## Step 4 - Creating the Flask app
 
-> It should be noted that if you're using an IDE like VSCode then you may have to install **types-flask** for the optimal experience.
+> If you're using an IDE like VSCode then you may have to install **types-flask** for the optimal experience.
 
 We're going to write our flask application in a single file called **app.py**.
 Lets start off by defining a function to connect to the database using the Prisma Client, add the following lines to the **app.py** file
@@ -193,12 +193,52 @@ Your **app.py** file should now look like this:
 
 ## Step 5 - Creating the home page
 
-We'll be using [Jinja2](https://jinja.palletsprojects.com/en/3.0.x/) HTML templates alongside [Bootstrap](https://getbootstrap.com/) for styling. However we will not be delving very far into how this works, if you're unfamiliar with Bottstrap then you should read the [official documentation](https://getbootstrap.com/docs/5.1/getting-started/introduction/)
+We'll be using [Flask HTML templates](https://flask.palletsprojects.com/en/2.0.x/tutorial/templates/) alongside [Bootstrap](https://getbootstrap.com/) for styling. However we will not be delving very far into how this works, if you're unfamiliar with Bottstrap then you should read the [official documentation](https://getbootstrap.com/docs/5.1/getting-started/introduction/).
+
+First, we need to create a base template that will load Bootstrap and setup our menu. Create a file at **templates/base.html** with the following content:
 
 ```html
 {!./src_examples/prisma-flask-url-shortener/templates/base.html! lines=1-23 28-44}
 ```
 
+Now lets create our landing page, create a file at **templates/index.html** with the following content:
+
 ```html
 {!./src_examples/prisma-flask-url-shortener/templates/index.html!}
 ```
+
+Now we need to create our first [Flask route](https://flask.palletsprojects.com/en/2.0.x/api/#url-route-registrations), this is what will tell Flask to send our **index.html** page to the user when they navigate to our website.
+
+Add a new function to your **app.py** file like so:
+
+```py
+{!./src_examples/prisma-flask-url-shortener/app.py! lines=31-33}
+```
+
+This first line tells Flask to call the function when the user navigates the the home page of our website (represented with **/**) and when a **GET** request is received (this is what your browser sends to the web server when you load a page), if you're unfamiliar with HTTP methods, the [Mozilla documentation](https://developer.mozilla.org/en-US/docs/Web/HTTP/Methods) is a good source of information.
+
+```py highlight=1
+{!./src_examples/prisma-flask-url-shortener/app.py! lines=31-33}
+```
+
+Now lets run the Flask server and try out our website!
+Run the following commands in your terminal:
+
+```sh
+$ export FLASK_APP=app
+$ export FLASK_ENV=development
+$ flask run
+ * Serving Flask app 'app' (lazy loading)
+ * Environment: development
+ * Debug mode: on
+ * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
+ * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 143-199-562
+```
+
+Navigate to http://127.0.0.1:5000/ in your browser and you should see a page like this:
+
+![Screenshot of the URL Shortener home page](/flask-url-shortener/home.png)
+
+Well done! You've now TODO
