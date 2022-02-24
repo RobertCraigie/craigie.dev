@@ -1,9 +1,9 @@
 [
   {
-    "title": "Placeholder title",
-    "description": "Placeholder description",
-    "slug": "placeholder",
-    "date": "Dec 1, 2021",
+    "title": "Typing select queries in Python",
+    "description": "Statically typing SQL select queries in Python",
+    "slug": "typing-select",
+    "date": "Feb 24, 2022",
     "body": null
   }
 ]
