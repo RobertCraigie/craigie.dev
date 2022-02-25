@@ -6,7 +6,9 @@ class MyDocument extends Document {
     return (
       <Html lang="en">
         <Head>
-          <script async defer data-website-id="8bca2abf-e614-4aed-b367-8e27a55907f1" src="https://umami-craigie.up.railway.app/umami.js"></script>
+          {
+            process.env.NODE_ENV === 'production' ? <script async defer data-website-id="8bca2abf-e614-4aed-b367-8e27a55907f1" src="https://umami-craigie.up.railway.app/umami.js"></script> : null
+          }
         </Head>
         <body>
           <Main />
