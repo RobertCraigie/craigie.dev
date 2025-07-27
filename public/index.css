@@ -1,0 +1,12 @@
+.badge {
+  a {
+    display: inline-block;
+    line-height: 0;
+  }
+  img {
+    image-rendering: pixelated;
+  }
+  &:hover img {
+    outline: solid 1px #000;
+  }
+}

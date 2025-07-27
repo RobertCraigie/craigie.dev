@@ -1,0 +1,28 @@
+{
+  "name": "craigie.dev",
+  "version": "1.0.0",
+  "private": true,
+  "description": "",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "packageManager": "pnpm@10.6.1",
+  "devDependencies": {
+    "dprint": "^0.50.1",
+    "tstrip": "^0.0.2"
+  },
+  "pnpm": {
+    "onlyBuiltDependencies": [
+      "dprint",
+      "esbuild",
+      "sharp",
+      "workerd"
+    ]
+  },
+  "dependencies": {
+    "wrangler": "^4.26.0"
+  }
+}
