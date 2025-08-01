@@ -1,3 +1,9 @@
+body {
+  max-width: 644px;
+  margin: auto;
+  padding: 2em;
+}
+
 .badge {
   a {
     display: inline-block;
