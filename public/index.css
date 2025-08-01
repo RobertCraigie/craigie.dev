@@ -1,7 +1,30 @@
+:root {
+  --text-color: #000;
+  --text-color-alt: #666;
+  --background-color: #fff;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --text-color: #c0caf5;
+    --text-color-alt: #a0aec0;
+    --background-color: rgb(26, 27, 37);
+  }
+}
+
+html {
+  background: var(--background-color);
+  color: var(--text-color);
+}
+
 body {
   max-width: 644px;
   margin: auto;
   padding: 2em;
+}
+
+a:link, a:visited {
+  color: var(--text-color-alt);
 }
 
 .badge {
