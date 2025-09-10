@@ -23,7 +23,8 @@ body {
   padding: 2em;
 }
 
-a:link, a:visited {
+a:link,
+a:visited {
   color: var(--text-color-alt);
 }
 
@@ -38,4 +39,8 @@ a:link, a:visited {
   &:hover img {
     outline: solid 1px #000;
   }
+}
+
+.stuff li {
+  margin-bottom: 0.5em;
 }
